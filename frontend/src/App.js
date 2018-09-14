@@ -30,11 +30,22 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <input type="text" value={this.state.value} onChange={this.handleChange} />
-        <button onClick={this.handleSearch}>
-          Search
-        </button>
-        <table>
+        <div class="row">
+          <div class="col-1">
+          </div>
+          <div class="col-4">
+            <input type="text" class="form-control" value={this.state.value} onChange={this.handleChange} />
+          </div>
+          <div class="col-1">
+            <button class="btn btn-primary" onClick={this.handleSearch}>
+              Search
+            </button>
+          </div>
+          <div class="col-4">
+          </div>
+        </div>
+
+        <table class="table table-striped">
           { this.state.data.map(row => <tr>
                                           <td>
                                             { row.formattedAxisTime }
