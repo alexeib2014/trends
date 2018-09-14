@@ -2,4 +2,11 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the backend index.")
+    '''
+    Proxy for index.html
+    '''
+    file = open('frontend/build/index.html', 'rt')
+    html = file.read()
+    file.close()
+
+    return HttpResponse(html, content_type='text/html')
